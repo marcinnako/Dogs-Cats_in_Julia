@@ -10,7 +10,8 @@ CUDA.allowscalar(false)
 #https://www.kaggle.com/chetankv/dogs-cats-images
 
 n_train, n_test = 4000, 1000 # Max 4000/1000
-k = 40                 # 4000 : 50
+k = 32                # 4000 : 40
+n_epochs = 20
 rng = Random.shuffle(collect(1:2*n_train))
 X_train = Float32.(zeros(128,128,3,n_train*2))
 X_test = Float32.(zeros(128,128,3,n_test*2))
@@ -80,7 +81,6 @@ println("Testing accuracy: ",accuracy(X_test,Y_test))
 println("Training accuracy: ",accuracy(X[1],Y[1]))
 m = m |> gpu
 println("Training Started")
-n_epochs = 20
 @time for i=1:n_epochs
     println("Epoch nr: $i")
     @time for j=1:k
