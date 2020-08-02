@@ -92,14 +92,14 @@ println("Training accuracy: ",accuracy(X[1],Y[1]))
 println("Testing accuracy: ",accuracy(X_test,Y_test))
 
 #Helping Function used to show pictures and their labels
-function img_show_train(n)
+function img_show_train(n);
     a = X_train[:,:,:,n]
     a = permutedims(a,[1,2,3])
     a = colorview(RGB, a[:,:,1], a[:,:,2], a[:,:,3])
     println(Y_train[n])
     imshow(a)
 end
-function img_show_test(n)
+function img_show_test(n);
     a = X_test[:,:,:,n]
     a = permutedims(a,[1,2,3])
     a = colorview(RGB, a[:,:,1], a[:,:,2], a[:,:,3])
