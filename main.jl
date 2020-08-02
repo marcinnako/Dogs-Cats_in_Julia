@@ -10,8 +10,8 @@ CUDA.allowscalar(false)
 #https://www.kaggle.com/chetankv/dogs-cats-images
 
 n_train, n_test = 4000, 1000 # Max 4000/1000 Number of pictures used for training
-k = 25                # Min 32 Batch size used for training.
-n_epochs = 20 #Number of epochs used in training
+k = 25                # Min 25 /number of batches
+n_epochs = 25 #Number of epochs used in training
 rng = Random.shuffle(collect(1:2*n_train))
 X_train = Float32.(zeros(128,128,3,n_train*2))
 X_test = Float32.(zeros(128,128,3,n_test*2))
